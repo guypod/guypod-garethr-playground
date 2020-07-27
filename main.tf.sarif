@@ -1,0 +1,49 @@
+{
+	"$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+	"version": "2.1.0",
+	"runs": [{
+		"tool": {
+			"driver": {
+				"name": "Snyk",
+				"rules": [{
+					"id": "snyk/terraform/aws/max-password-age",
+					"name": "snyk/terraform/aws/max-password-age",
+					"shortDescription": {
+						"text": "IAM should have max password age"
+					},
+					"fullDescription": {
+						"text": "AWS IAM password policy should have maximum passwords age and the age to be more than 90 days."
+					},
+					"properties": {
+						"tags": [
+							"security",
+							"snyk",
+							"terraform",
+							"aws"
+						],
+						"precision": "very-high"
+					}
+				}]
+			}
+		},
+		"results": [{
+			"ruleId": "snyk/terraform/aws/max-password-age",
+			"ruleIndex": 0,
+			"message": {
+				"text": "IAM policy 'strict' should have max_password_age > 90"
+			},
+			"locations": [{
+				"physicalLocation": {
+					"artifactLocation": {
+						"uri": "main.tf",
+						"uriBaseId": "%SRCROOT%",
+						"index": 0
+					},
+					"region": {
+						"startLine": 19
+					}
+				}
+			}]
+		}]
+	}]
+}
