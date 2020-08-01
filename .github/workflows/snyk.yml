@@ -10,7 +10,11 @@ jobs:
     steps:
     - name: Checkout the code
       uses: actions/checkout@v2
-    - name: Upload the SARIF file
+      #    - name: Upload the Terraform SARIF file
+      #uses: github/codeql-action/upload-sarif@v1
+      #with:
+      #  sarif_file: main.tf.sarif
+    - name: Upload the Docker SARIF file
       uses: github/codeql-action/upload-sarif@v1
       with:
-        sarif_file: main.tf.sarif
+        sarif_file: snyk.sarif
